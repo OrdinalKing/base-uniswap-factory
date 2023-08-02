@@ -5,7 +5,22 @@ require('dotenv').config();
 
 const config: HardhatUserConfig = {
   solidity: {
-    version: '0.8.17',
+    version: '0.5.16',
+  },
+  etherscan: {
+    apiKey: {
+     "base-goerli": "PLACEHOLDER_STRING"
+    },
+    customChains: [
+      {
+        network: "base-goerli",
+        chainId: 84531,
+        urls: {
+         apiURL: "https://api-goerli.basescan.org/api",
+         browserURL: "https://goerli.basescan.org"
+        }
+      }
+    ]
   },
   networks: {
     // for mainnet
